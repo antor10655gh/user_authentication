@@ -1,0 +1,15 @@
+{% extends 'user_authentication_app/base.html' %}
+{% block body_block %}
+{% if registered %}
+<div class="alert alert-success">
+  <h3>Congratulations!! Registration Succesfull</h3>
+</div>
+{% else %}
+<form class="" enctype="multipart/form-data" action="" method="POST">
+  {{ user_form.as_p }}
+  {{ userinfo_form.as_p }}
+  {% csrf_token %}
+  <input type="submit" name="submit" value="Register">
+</form>
+{% endif %}
+{% endblock %}
