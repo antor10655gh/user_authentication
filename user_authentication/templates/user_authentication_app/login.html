@@ -1,12 +1,12 @@
 {% extends 'user_authentication_app/base.html' %}
 {% block body_block %}
-<h3>{{ login }}</h3>
-<form class="" action="" method="post">
+<h3>Please Login</h3>
+<form action="{% url 'user_authentication_app:user_login' %}" method="POST">
   <label for="username">Username</label>
-  <input type="text" class="form-control" name="usernamr" placeholder="Enter your username..">
+  <input type="text" class="form-control" name="username" placeholder="Enter your username.." required>
   <br>
   <label for="password">Password</label>
-  <input type="text" class="form-control" name="password" placeholder="Enter your password..">
+  <input type="password" class="form-control" name="password" placeholder="Enter your password.." required>
   <br>
   {% csrf_token %}
   <input type="submit" name="submit" value="Login" class="btn btn-primary btn-sm">

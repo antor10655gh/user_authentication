@@ -18,12 +18,18 @@
            <li class="active">
              <a href="{% url 'user_authentication_app:index' %}">Home</a>
            </li>
+           {% if user.is_authenticated %}
+           <li>
+             <a href="{% url 'user_authentication_app:user_logout' %}">Logout</a>
+           </li>
+           {% else %}
            <li>
              <a href="{% url 'user_authentication_app:register' %}">Register</a>
            </li>
            <li>
              <a href="{% url 'user_authentication_app:log_in' %}">Login</a>
            </li>
+           {% endif %}
          </ul>
        </div>
      </nav>
